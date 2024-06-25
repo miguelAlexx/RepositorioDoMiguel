@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <button type="button" onClick="mostraroprompt()">APERTE PARA VOCÊ INSERIR OS DADOS</button> 
+
+    <br><br>
+    
+    <button type="button" onClick="mostrarResultado('soma')">MOSTRAR O RESULTADO SOMA</button> 
+
+    <br><br>
+
+    <button type="button" onClick="mostrarResultado('subtracao')">MOSTRAR O RESULTADO SUBTRAÇÃO</button> 
+
+    <br><br>
+
+    <button type="button" onClick="mostrarResultado('multiplicacao')">MOSTRAR O RESULTADO MULTIPLICAÇÃO</button> 
+
+    <br><br>
+
+    <button type="button" onClick="mostrarResultado('divisao')">MOSTRAR O RESULTADO DIVISÃO</button> 
+
+    <script>
+        let a, b;
+
+        function soma(a, b) {
+            return a + b; 
+        }
+
+        function subtracao(a, b) {
+            return a - b; 
+        }
+
+        function multiplicacao(a, b) {
+            return a * b;
+        }
+
+        function divisao(a, b) {
+            return a / b;
+        }
+
+        function mostraroprompt() {
+            a = parseFloat(prompt("Digite o primeiro número:"));
+            b = parseFloat(prompt("Digite o segundo número:"));
+        }
+
+        function mostrarResultado(operacao) {
+            if (!isNaN(a) && !isNaN(b)) {
+                let resultado;
+                switch (operacao) {
+                    case 'soma':
+                        resultado = soma(a, b);
+                        window.alert("Resultado da soma: " + resultado);
+                        break;
+                    case 'subtracao':
+                        resultado = subtracao(a, b);
+                        window.alert("Resultado da subtração: " + resultado);
+                        break;
+                    case 'multiplicacao':
+                        resultado = multiplicacao(a, b);
+                        window.alert("Resultado da multiplicação: " + resultado);
+                        break;
+                    case 'divisao':
+                        resultado = divisao(a, b);
+                        window.alert("Resultado da divisão: " + resultado);
+                        break;
+                    default:
+                        window.alert("Operação inválida.");
+                }
+            } else {
+                window.alert("Por favor, insira números válidos.");
+            }
+        }
+    </script>
+</body>
+</html>
