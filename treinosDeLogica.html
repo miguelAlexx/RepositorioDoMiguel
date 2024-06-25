@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConversorDeUnidadesMetricas</title>
+</head>
+    <style>
+    
+    </style>
+<body>
+    <h2>Temperatura</h2>
+    <form>
+        <label for="tempCelcius">Temperatura em Graus Celcius:</label>
+            <input type="number" id="celcius" name="celcius"> <br><br>
+        <label for="tempFahrenheit">Temperatura em Graus Fahrenheit:</label>
+            <input type="number" id="fahrenheit" name="fahrenheit"> <br><br>
+            
+            
+    <h3>Conversor</h3>
+        <button type="button" onclick="conversorDeTemperaturaCparaF()">CelciusParaFahrenheit</button>
+        <br><br>
+        <button type="button" onclick="conversorDeTemperaturaFparaC()">FahrenheitParaCelcius</button>
+        <br><br>
+        <button type="button" onclick="conversorDeTemperaturaCparaK()">CelciusParaKelvin</button>
+        <br><br>
+        <button type="button" onclick="botaoaleatorio()">IrParaPaginaDeConversaoDeDistancia</button>
+
+    </form>
+    <script>
+        function botaoaleatorio(){
+            if(true){
+                return window.location.href = "conversor.html";
+            }
+        }
+        function conversorDeTemperaturaCparaF(tempCelcius){
+
+            var tempCelcius = Number(document.getElementById('celcius').value);
+            const a = 32;
+            const b = 1.8;
+            let conversao = tempCelcius * 1.8;
+            let conversao2 = conversao + a;
+            window.alert("A temperatura em Fahrenheit é " + conversao2);
+}
+
+        function conversorDeTemperaturaFparaC(tempFahrenheit){
+
+            var tempFahrenheit = Number(document.getElementById('fahrenheit').value);
+            const c = 32;
+            const d = 1.8;
+            let conversao3 = tempFahrenheit - c;
+            let conversao4 = conversao3 / 1.8;
+            window.alert("A temperatura em Celcius é " + conversao4);
+}
+
+        function conversorDeTemperaturaCparaK(tempCelcius){
+
+            var tempCelcius = Number(document.getElementById('celcius').value);
+            const e = 273;
+            let conversao5 = tempCelcius + e;
+            window.alert("A temperatura em kelvin é " + conversao5);
+        }
+
+</script>
+</body>
+</html>
